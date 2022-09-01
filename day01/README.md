@@ -1,5 +1,5 @@
 <h1>Day 1 - Working with Variables in Python to Manage Data</h1>
-<hr>
+
 <h2>Concepts Practised</h2>
 
 <ul>
