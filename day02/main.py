@@ -5,4 +5,4 @@ peopleToSplit = float(input("\nHow many people to split the bill? "))
 
 billForEach = round((bill + (bill * percentageTip / 100)) / peopleToSplit, 2)
 
-print(f"Each person should pay: ${billForEach}")
+print("Each person should pay: ${:.2f}".format(billForEach))
