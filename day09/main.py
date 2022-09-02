@@ -1,4 +1,4 @@
-from essential_functions import clear, sleep, logo
+from essential import clear, sleep, logo
 
 
 print(logo)
