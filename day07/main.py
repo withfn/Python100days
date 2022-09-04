@@ -1,6 +1,5 @@
 from random import choice
-from hangman_art import stages, logo
-from hangman_words import word_list
+from essential import clear, stages, logo,  word_list
 
 chosen_word = choice(word_list)
 guess = []
@@ -11,15 +10,18 @@ for x in chosen_word:
 print(logo)
 
 while True:
-    print(stages[lives])
     player_guess = input("Guess a letter: ").lower()
+    clear()
     if player_guess in chosen_word:
         for letter in range(len(chosen_word)):
             if chosen_word[letter] == player_guess:
                 guess[letter] = chosen_word[letter]
     else:
+        print(f"{player_guess} is not in the word, you lost 1 life")
         lives -= 1
-    print(' '.join(guess))
+    
+    print(stages[lives])
+    print(' '.join(guess) +'\n')
 
     if lives == 0:
         print('You lose.')
@@ -28,3 +30,4 @@ while True:
         print('You Win!') 
         break
 print("Word: " + chosen_word)
+print('\n\n')

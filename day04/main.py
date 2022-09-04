@@ -44,19 +44,19 @@ else:
     if playerChoice == computer:
         print('Draw!')
         
-    if playerChoice == 0:
+    elif playerChoice == 0:
         if computer == 1:
             print('You Lose.')
         else:
             print('You Win!')
 
-    if playerChoice == 1:
+    elif playerChoice == 1:
         if computer == 0:
             print('You Win!')
         else:
             print('You Lose.')
             
-    if playerChoice == 2:
+    elif playerChoice == 2:
         if computer == 0:
             print('You Lose.')
         else:
