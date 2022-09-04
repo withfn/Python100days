@@ -1,10 +1,6 @@
-<h1>Day 9 - Dictionaries, Nesting and the Secret Auction<h1>
-
-<h2>Concepts Practised</h2>
-
-<ul>
-    <li>The Python Dictionary</li>
-    <li>Nesting Lists and Dictionaries</li>
-</ul>
-
-<h2>The Secret Auction Program</h2>
+# Day 9 - Dictionaries, Nesting and the Secret Auction
+## Concepts Practised
+- The Python Dictionary
+- Nesting Lists and Dictionaries
+## The Secret Auction Program
+![day09](https://user-images.githubusercontent.com/79554351/188319016-fa564a1b-2730-49d9-b3cd-5117c99e9fec.gif)
