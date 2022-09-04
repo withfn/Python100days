@@ -1,11 +1,10 @@
-<h1>Day 3 - Control Flow and Logical Operators</h1>
+# Day 3 - Control Flow and Logical Operators
 
-<h2>Concepts Practised</h2>
-<ul>
-    <li>Control Flow with if / else and Conditional Operators</li>
-    <li>Modulo Operator</li>
-    <li>Nested if statements and elif statements</li>
-    <li>Multiple If Statements in Succession</li>
-    <li>Logical Operators</li>
-</ul>
-<h2>Treasure Island</h2>
+## Concepts Practised
+- Control Flow with if / else and Conditional Operators
+- Modulo Operator
+- Nested if statements and elif statements
+- Multiple If Statements in Succession
+- Logical Operators
+## Treasure Island
+![day03](https://user-images.githubusercontent.com/79554351/188286016-2805b589-a08c-446a-80b4-be68ac6db145.gif)

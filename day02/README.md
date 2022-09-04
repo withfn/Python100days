@@ -1,12 +1,9 @@
-<h1>Day 2 - Understanding Data Types and How to Manipulate Strings</h1>
-
-<h2>Concepts Practised</h2>
-
-<ul>
-    <li>Python Primitive Data Types</li>
-    <li>Type Error, Type Checking and Type Conversion</li>
-    <li>Data Types</li>
-    <li>Mathematical Operations in Python</li>
-    <li>Number Manipulation and F Strings in Python</li>
-</ul>
-<h2>Tip Calculator</h2>
+# Day 2 - Understanding Data Types and How to Manipulate Strings
+## Concepts Practised
+- Python Primitive Data Types
+- Type Error, Type Checking and Type Conversion
+- Data Types
+- Mathematical Operations in Python
+- Number Manipulation and F Strings in Python
+## Tip Calculator
+![day02](https://user-images.githubusercontent.com/79554351/188285383-c80a92a3-caeb-4605-833e-f35d092b917f.gif)
