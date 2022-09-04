@@ -1,14 +1,10 @@
-<h1>Day 10 - Functions with Outputs</h1>
-
-<h2>Concepts Practised</h2>
-
-<ul>
-    <li>Function with Outputs</li>
-    <li>Multiple return values</li>
-    <li>Docstrings</li>
-    <li>Combining Dictionaries and Functions</li>
-    <li>Print vs. Return</li>
-    <li>While Loops, Flags and Recursion</li>
-</ul>
-
-<h2>Calculator</h2>
+# Day 10 - Functions with Outputs
+## Concepts Practised
+- Function with Outputs
+- Multiple return values
+- Docstrings
+- Combining Dictionaries and Functions
+- Print vs. Return
+- While Loops, Flags and Recursion
+## Calculator
+![day10](https://user-images.githubusercontent.com/79554351/188320436-26fed30e-401d-4cad-a3da-673c73e3dfe2.gif)
