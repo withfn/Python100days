@@ -29,6 +29,6 @@ while True:
 
     caesar(text, shift, direction)
     
-    again = input("You want go again? type 'yes' or 'no'\n ").lower()
+    again = input("You want go again? type 'yes' or 'no'\n").lower()
     if again == 'no':
         break

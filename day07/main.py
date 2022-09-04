@@ -30,4 +30,3 @@ while True:
         print('You Win!') 
         break
 print("Word: " + chosen_word)
-print('\n\n')
