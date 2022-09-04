@@ -1,18 +1,16 @@
 from essential import clear, logo
 
-def add(n1, n2):
-    return n1 + n2
+def add(n1, n2): return n1 + n2
 
-def subtract(n1, n2):
-    return n1 - n2
+def subtract(n1, n2): return n1 - n2
 
-def multiply(n1, n2):
-    return n1 * n2
+def multiply(n1, n2): return n1 * n2
 
-def division(n1, n2):
-    return n1 / n2
+def division(n1, n2): return n1 / n2
 
 operations = {"+": add, "-":subtract, "*": multiply, "/":division}
+
+clear()
 
 def calculator():
     n1 = float(input("What's the first number?: "))
@@ -32,6 +30,7 @@ def calculator():
         else:
             should_continue = False
             clear()
+            print(logo)
             calculator()
 
 print(logo)
