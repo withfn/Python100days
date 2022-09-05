@@ -41,9 +41,9 @@ def game():
         run = compare_answer(a, b, user)
         
         if run:
-            score += 1
             a += 1
             b += 1
+            score += 1
             
             clear()
             print(logo)
