@@ -55,18 +55,11 @@ def check_drink():
 
 #checks if the machine has enough resources to make the drink.
 def check_resources(drink):
-    if resources['water'] >= MENU[drink]['ingredients']['water']:
-        if resources['milk'] >= MENU[drink]['ingredients']['milk']:
-            if resources["coffee"] >= MENU[drink]['ingredients']['coffee']:
-                return 'enough'
-            else:
-                enough_resources = 'coffee'
-        else:
-            enough_resources = 'milk'
-    else:
-        enough_resources = 'water'
-    print(f"Sorry there is not enough {enough_resources}.")
-    return 'not enough'
+    for item in drink:
+        if drink[item] > resources[item]:
+            print(f"​Sorry there is not enough {item}.")
+            return 'not enough'
+    return 'enough'
 
 #Receive customer coins and returns the total.
 def process_coins():
@@ -90,23 +83,23 @@ def report():
 
         
 MONEY = 0
-CONDITION = True
+is_on = True
 
 #coffee machine working
-while CONDITION:
+while is_on:
     #receives the drink chosen by the customer.
     user_drink = check_drink()
     if user_drink == 'off':
-        CONDITION = False
+        is_on = False
         continue
     
     #print report of resources.
-    if user_drink == 'report':
+    elif user_drink == 'report':
         print(report())
-        continue
     
     #Check if resources are enough.
-    resources_suffient = check_resources(user_drink)
+    
+    resources_suffient = check_resources(MENU[user_drink]['ingredients'])
     if resources_suffient == 'not enough':
         print('refuel the machine.')
         continue
