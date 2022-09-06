@@ -18,9 +18,7 @@ while is_on:
     else:
         if menu.find_drink(order):
             drink = menu.find_drink(order)
-            if coffe_machine.is_resource_sufficient(drink):
-                payment = money_machine.make_payment(drink.cost)
-                if payment:
+            if coffe_machine.is_resource_sufficient(drink) and money_machine.make_payment(drink.cost):
                     coffe_machine.make_coffee(drink)
     sleep(2)
     clear()
