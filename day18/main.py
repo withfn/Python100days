@@ -11,14 +11,10 @@ turtle = Turtle(shape="triangle")
 turtle.speed(8)
 turtle.penup()
 turtle.setposition(x_position, y_position)
-turtle.pensize(25)
 
 for _ in range(10):
     for step in range(10):
-        turtle.pencolor(choice(colors))
-        turtle.pendown()
-        turtle.forward(1)
-        turtle.penup()
+        turtle.dot(25, choice(colors))
         turtle.forward(50)
 
     y_position += 50
