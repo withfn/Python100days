@@ -11,6 +11,7 @@ is_on = True
 while is_on:
     order = input(f"What would you like? ({menu.get_items()}): ")
     if order == "off":
+        print("Have a good one!")
         is_on = False
     elif order == "report":
         coffe_machine.report()
