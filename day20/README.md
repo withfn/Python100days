@@ -5,4 +5,4 @@
 - Create a Snake Class & Move to OOP
 - How to Control the Snake with a Keypress
 ## Snake Game Part 1
-![day20](https://user-images.githubusercontent.com/79554351/189149811-d8be3e95-f400-400b-a14c-2a7a736a2eee.gif)
+![day20](https://user-images.githubusercontent.com/79554351/189150897-3ab57852-ecfc-47f4-9781-6d90aaef843d.gif)
