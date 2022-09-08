@@ -1,4 +1,4 @@
-from turtle import Screen, Turtle
+from turtle import Screen
 from time import sleep
 from scoreboard import Scoreboard
 from snake import Snake
