@@ -5,4 +5,4 @@
 - Working with Rows & Columns
 - Data Analysis with Pandas
 ## U.S. States Game
-![day25](https://user-images.githubusercontent.com/79554351/189465000-062f150a-9860-4f14-a07a-b92f1354d3b0.gif)
+![day25](https://user-images.githubusercontent.com/79554351/189465020-ad720ce4-bce4-444c-9329-4ef42f73d5f2.gif)
