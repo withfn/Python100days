@@ -26,8 +26,6 @@ class BankStates():
     
     #create a csv of missing states
     def states_to_learn(self):
-        for state in self.states.state:
-            if state not in self.guessed_states:
-                self.missing_states.append(state)
+        self.missing_states = [state for state in self.states.state if state not in self.guessed_states]
         new_data = pd.DataFrame(self.missing_states)
         new_data.to_csv("states_to_learn.csv")
