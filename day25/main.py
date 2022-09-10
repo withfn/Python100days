@@ -1,5 +1,5 @@
 import turtle
-from bank_states import BankStates
+from writer import Writer
 
 screen = turtle.Screen()
 screen.title("U.S States Game")
@@ -8,13 +8,16 @@ image = "blank_states_img.gif"
 screen.addshape(image)
 turtle.shape(image)
 
-bank_states = BankStates()
+writer = Writer()
+guessed_states = len(writer.guessed_states)
 
-game_is_on = True
-while game_is_on:
-    bank_states.answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
+while guessed_states < 50:
+    writer.answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?").title()
     
-    if bank_states.answer_state == 'off':
-        game_is_on = False
+    if writer.answer_state == "Exit":
+        break
+    
+    if writer.get_position():
+        writer.update_states()
 
-screen.mainloop()
+writer.states_to_learn()
