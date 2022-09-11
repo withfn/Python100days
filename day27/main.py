@@ -12,7 +12,7 @@ label_miles = tkinter.Label(text="Miles", font=("Arial", 14))
 label_miles.grid(row=0, column=2)
 label_miles.config(padx=5, pady=5)
 
-label_equal = tkinter.Label(text="is equal to", font=("Arial", 14))
+label_equal = tkinter.Label(text="Equals", font=("Arial", 14))
 label_equal.grid(row=1, column=0)
 label_equal.config(padx=5, pady=5)
 
