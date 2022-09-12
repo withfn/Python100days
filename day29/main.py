@@ -32,7 +32,7 @@ def add_account():
     email = email_input.get()
     password = password_input.get()
     
-    if website == '' or email == '' or password == '':
+    if len(website) == 0 or len(email) == 0 or len(password == 0):
         messagebox.showerror(title="Fields Empty", message="You need fill all fields.")
     else:
         is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \nEmail: {email}"
