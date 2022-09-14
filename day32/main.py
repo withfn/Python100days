@@ -5,7 +5,7 @@ from random import randint
 
 #login
 my_email = "withfnas@gmail.com"
-password = "vbddeofxkejhbgnb"
+password = "password"
 
 #date
 dt = dt.datetime.today()
