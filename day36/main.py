@@ -1,8 +1,23 @@
+import requests
+
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
 ## STEP 1: Use https://www.alphavantage.co
 # When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
+alphavantage_key = 'FKSP3LMVKSPCEBZP'
+alphavantage_parameters = {
+    'function': 'TIME_SERIES_DAILY',
+    'symbol': STOCK,
+    'apikey': alphavantage_key
+}
+tesla = requests.get(url="https://www.alphavantage.co/query", params=alphavantage_parameters)
+print(tesla.status_code)
+tesla_data = tesla.json()
+yesterday_stock = tesla_data["Time Series (Daily)"]["2022-09-14"]
+before_yesterday_stock = tesla_data["Time Series (Daily)"]["2022-09-13"]
+print(yesterday_stock, before_yesterday_stock)
+
 
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
