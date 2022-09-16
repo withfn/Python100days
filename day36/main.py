@@ -1,23 +1,20 @@
+from turtle import update
 import requests
 from datetime import date, timedelta
-from newsapi import NewsApiClient
+from twilio.rest import Client
 
 STOCK = "TSLA"
-COMPANY_NAME = "Tesla Inc"
+COMPANY_NAME = "Tesla"
 
-def get_percentage():
-    return round(float(yesterday_stock) - float(before_yesterday_stock) / float(before_yesterday_stock) * 100)
 
-## STEP 1: Use https://www.alphavantage.co
-# When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
-alphavantage_key = 'FKSP3LMVKSPCEBZP'
+#####
+
 alphavantage_parameters = {
     'function': 'TIME_SERIES_DAILY',
     'symbol': STOCK,
-    'apikey': alphavantage_key
+    'apikey': ALPHAVANTAGE_KEY
 }
 tesla = requests.get(url="https://www.alphavantage.co/query", params=alphavantage_parameters)
-print(tesla.status_code)
 tesla_data = tesla.json()
 
 today = date.today()
@@ -26,29 +23,37 @@ before_yesterday = (today - timedelta(days=2))
 yesterday_stock = tesla_data["Time Series (Daily)"][str(yesterday_date)]["4. close"]
 before_yesterday_stock = tesla_data["Time Series (Daily)"][str(before_yesterday)]["4. close"]
 
+difference = float(yesterday_stock) - float(before_yesterday_stock)
+up_down = None
+if difference > 0:
+    up_down = "🔺"
+else:
+    up_down = "🔻"
+
+diff_percent = round((difference / float(yesterday_stock)) * 100, 2)
+print(difference)
+print(diff_percent)
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
-newsapi = NewsApiClient(api_key="e4d15516139f4a0e91f1520391f7a26f")
-all_articles = newsapi.get_everything(q='tesla',
-                                    sources='bbc-news',
-                                    language='en',
-                                    country='us')
+if  abs(diff_percent) > 1: 
+    news_params = {
+        "apiKey": NEWSAPI_KEY,
+        "qInTitle": COMPANY_NAME,
+        
+    }
 
-print(all_articles)
-
-
-## STEP 3: Use https://www.twilio.com
-# Send a seperate message with the percentage change and each article's title and description to your phone number. 
-
-
-#Optional: Format the SMS message like this: 
-"""
-TSLA: 🔺2%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-or
-"TSLA: 🔻5%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-"""
-
+    news_response = requests.get("https://newsapi.org/v2/everything", params=news_params)
+    articles = news_response.json()['articles']
+    three_articles = articles[:3]
+    
+    formatted_articles = [f"{STOCK}: {up_down}{diff_percent}%  Headline: {article['title']}. \nBrief: {article['description']}" for article in three_articles]
+    print(formatted_articles)
+    client = Client(TWILIO_SID, TWILIO_TOKEN)
+    
+    for article in formatted_articles:
+        message = client.messages.create(
+            body=article,
+            from_=TWILIO_NUMBER,
+            to="+5511949788910"
+        )
+    print("salvee")
