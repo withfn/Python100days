@@ -7,7 +7,7 @@ MY_LAT = -23.525188
 MY_LONG = -46.823083
 
 my_email = "withfnas@gmail.com"
-password = "vbddeofxkejhbgnb"
+password = ""
 
 def is_iss_overhead():
     response = requests.get(url="http://api.open-notify.org/iss-now.json")
