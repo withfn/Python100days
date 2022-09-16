@@ -1,4 +1,3 @@
-from turtle import update
 import requests
 from datetime import date, timedelta
 from twilio.rest import Client
