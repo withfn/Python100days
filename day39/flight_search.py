@@ -2,7 +2,7 @@ import requests
 from datetime import datetime, timedelta
 from flight_data import FlightData
 
-API_KEY = "066wYwVtzmgdPLv_pevt15Cw6LN1c0Ic"
+API_KEY = ""
 
 date_from = datetime.now() + timedelta(days=1)
 date_to = date_from + timedelta(days=180)
