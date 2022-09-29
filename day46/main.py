@@ -33,6 +33,6 @@ USER_ID = results['id']
  
 uris = [sp.search(title)['tracks']['items'][0]['uri'] for title in titles]
 
-PLAYLIST_ID = sp.user_playlist_create(user=USER_ID,public=False,name=f"{date} BillBoard-100")['id']
+PLAYLIST_ID = sp.user_playlist_create(user=USER_ID, public=False, name=f"{date} BillBoard-100")['id']
  
-sp.user_playlist_add_tracks(playlist_id=PLAYLIST_ID,tracks=uris,user=USER_ID)
+sp.user_playlist_add_tracks(playlist_id=PLAYLIST_ID, tracks=uris, user=USER_ID)
