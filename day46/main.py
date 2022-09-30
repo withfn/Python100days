@@ -16,8 +16,8 @@ titles = [title.getText().strip() for title in all_titles]
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
  
-CLIENT_ID = "xx"
-CLIENT_SECRET = "xx"
+CLIENT_ID = ""
+CLIENT_SECRET = ""
 URI = "http://example.com"
  
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
