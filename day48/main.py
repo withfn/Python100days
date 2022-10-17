@@ -11,19 +11,27 @@ driver.get("http://orteil.dashnet.org/experiments/cookie/")
 
 cookie = driver.find_element(By.ID,'cookie')
 
-time_execution = 30   # [seconds]
-initial_time = time.time()
-timeout = initial_time + time_execution
-step = 5 + initial_time
+buys = driver.find_elements(By.CSS_SELECTOR, '.grayed > b')
+testeb = buys[0].text.split("- ")
 
-while True:
-    cookie.click()
-    if time.time() > timeout:
-        break
-    if time.time() > step:
-        step += 5
-        print(step)
-        # break
+for x in buys[0: -1]:
+    x = x.text.split("- ")
+    x = x[1]
+    print(x)
+
+# time_execution = 30   # [seconds]
+# initial_time = time.time()
+# timeout = initial_time + time_execution
+# step = 5 + initial_time
+
+# while True:
+#     cookie.click()
+#     if time.time() > timeout:
+#         break
+#     if time.time() > step:
+#         step += 5
+#         print(step)
+#         # break
     
 
-print(timeout)
+# print(timeout)
